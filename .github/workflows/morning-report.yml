@@ -2,8 +2,8 @@ name: Morning Report
 
 on:
   schedule:
-    - cron: '0 1 * * *' # รันตอน 8 โมงเช้าเวลาไทย
-  workflow_dispatch: # อนุญาตให้กดปุ่มรันเองได้
+    - cron: '0 1 * * *'
+  workflow_dispatch:
 
 jobs:
   run-logger:
@@ -18,9 +18,11 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install gspread
+        run: pip install gspread requests
 
       - name: Run sales logger script
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python sales_logger.py
