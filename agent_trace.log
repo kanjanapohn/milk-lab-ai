@@ -1,0 +1,6 @@
+2026-07-23 10:18:03 | user_input | บันทึกขายลาเต้น้ำผึ้ง 3 แก้ว
+2026-07-23 10:18:03 | llm_response | {"tool": "append_sale", "args": {"item": "ลาเต้น้ำผึ้ง", "qty": 3}}
+2026-07-23 10:18:03 | tool_result | row appended at A12
+2026-07-23 10:18:03 | user_input | บันทึกขายชาไข่มุก -2 แก้ว
+2026-07-23 10:18:03 | llm_response | {"tool": "append_sale", "args": {"item": "ชาไข่มุก", "qty": -2}}
+2026-07-23 10:18:03 | tool_error | ValueError quantity must be positive
